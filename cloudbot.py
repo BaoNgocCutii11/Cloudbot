@@ -12,7 +12,10 @@ import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
-# --- THÊM CÁC DÒNG NÀY ĐỂ DEBUG ---
+# --- DÒNG NÀY PHẢI LUÔN LÀ LỆNH STREAMLIT ĐẦU TIÊN ---
+st.set_page_config(page_title="CloudBot: Phân Loại Rác & Môi Trường Xanh ♻️", page_icon="🌳", layout="wide")
+
+# --- CÁC DÒNG DEBUG ĐƯỢC DI CHUYỂN XUỐNG DƯỚI set_page_config ---
 st.write(f"Current working directory: {os.getcwd()}")
 st.write(f"Files in current directory: {os.listdir()}")
 if os.path.exists('model.keras'):
@@ -21,9 +24,6 @@ else:
     st.write("model.keras is NOT found by os.path.exists() at root.")
 # --- KẾT THÚC CÁC DÒNG DEBUG ---
 
-
-# --- DI CHUYỂN DÒNG NÀY LÊN ĐẦU TIÊN SAU CÁC LỆNH IMPORTS ---
-st.set_page_config(page_title="CloudBot: Phân Loại Rác & Môi Trường Xanh ♻️", page_icon="🌳", layout="wide")
 
 # --- 1. SETUP API & CONFIG ---
 load_dotenv()
