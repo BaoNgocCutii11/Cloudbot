@@ -5,10 +5,6 @@
 __pycache__/
 *.pyc
 
-# Các file mô hình lớn
-*.keras
-**/*.keras
-
 # Thư mục dữ liệu
 dataset/
 
