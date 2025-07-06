@@ -1,15 +1,5 @@
-# Các file nhạy cảm
 .env
-
-# Các file tạm thời của Python
 __pycache__/
 *.pyc
-
-# Thư mục dữ liệu
-dataset/
-
-# Thư mục cấu hình Streamlit cục bộ
 .streamlit/
-
-# Các file tạm thời của Jupyter Notebook
 .ipynb_checkpoints/
