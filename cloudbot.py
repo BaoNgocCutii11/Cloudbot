@@ -15,6 +15,19 @@ from tensorflow.keras.preprocessing.image import ImageDataGenerator
 # --- DI CHUYỂN DÒNG NÀY LÊN ĐẦU TIÊN SAU CÁC LỆNH IMPORTS ---
 st.set_page_config(page_title="CloudBot: Phân Loại Rác & Môi Trường Xanh ♻️", page_icon="🌳", layout="wide")
 
+# --- Thêm CSS tùy chỉnh để thay đổi màu nền ---
+st.markdown(
+    """
+    <style>
+    .stApp {
+        background-color: #E6F7E6; /* Một tông màu xanh lá cây nhạt, bạn có thể thay đổi mã màu này */
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+# --- Kết thúc CSS tùy chỉnh ---
+
 # --- 1. SETUP API & CONFIG ---
 load_dotenv()
 google_api_key = os.getenv("GOOGLE_API_KEY")
