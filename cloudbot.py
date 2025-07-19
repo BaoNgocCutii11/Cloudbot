@@ -12,18 +12,8 @@ import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
-# --- DÒNG NÀY PHẢI LUÔN LÀ LỆNH STREAMLIT ĐẦU TIÊN ---
+# --- DI CHUYỂN DÒNG NÀY LÊN ĐẦU TIÊN SAU CÁC LỆNH IMPORTS ---
 st.set_page_config(page_title="CloudBot: Phân Loại Rác & Môi Trường Xanh ♻️", page_icon="🌳", layout="wide")
-
-# --- CÁC DÒNG DEBUG ĐƯỢC DI CHUYỂN XUỐNG DƯỚI set_page_config ---
-st.write(f"Current working directory: {os.getcwd()}")
-st.write(f"Files in current directory: {os.listdir()}")
-if os.path.exists('model.keras'):
-    st.write("model.keras is found by os.path.exists() at root.")
-else:
-    st.write("model.keras is NOT found by os.path.exists() at root.")
-# --- KẾT THÚC CÁC DÒNG DEBUG ---
-
 
 # --- 1. SETUP API & CONFIG ---
 load_dotenv()
@@ -111,14 +101,14 @@ val_frac = 0.2
 batch_size = 32
 
 data_augmentor = ImageDataGenerator(samplewise_center=True,
-                                        samplewise_std_normalization=True,
-                                        validation_split=val_frac)
+                                    samplewise_std_normalization=True,
+                                    validation_split=val_frac)
 
 train_generator = data_augmentor.flow_from_directory(data_dir,
-                                                         target_size=input_size,
-                                                         batch_size=batch_size,
-                                                         shuffle=True,
-                                                         subset="training")
+                                                     target_size=input_size,
+                                                     batch_size=batch_size,
+                                                     shuffle=True,
+                                                     subset="training")
 CLASS_NAMES = list(train_generator.class_indices.keys())
 
 def classify_waste_image(image):
