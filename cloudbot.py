@@ -97,7 +97,7 @@ Trả lời bằng tiếng Việt, khoảng 3-5 gạch đầu dòng.
 @st.cache_resource
 def load_classification_model():
     """Tải mô hình phân loại rác đã huấn luyện."""
-    model_path = 'model.keras' # Đảm bảo đường dẫn này đúng
+    model_path = 'model_best.keras' # Sử dụng mô hình tốt nhất #
     if os.path.exists(model_path):
         return tf.keras.models.load_model(model_path)
     else:
